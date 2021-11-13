@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { createReducer } from "@reduxjs/toolkit";
 
+import { filterReducers } from "../filter/filter-redusers";
 import {
   fetchContactsRequest,
   fetchContactsSuccses,
@@ -12,7 +13,6 @@ import {
   deleteContactSuccses,
   deleteContactError,
 } from "./contacts-actions";
-import { filterReducers } from "../filter/filter-redusers";
 
 const contactsListReducer = createReducer([], {
   [fetchContactsSuccses]: (_, { payload }) => payload,

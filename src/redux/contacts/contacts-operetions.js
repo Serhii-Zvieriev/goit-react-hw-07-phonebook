@@ -60,4 +60,4 @@ export const addContact = (text) => async (dispatch) => {
   }
 };
 
-export default (fetchContacts, deleteContact, addContact);
+// export default (fetchContacts, deleteContact, addContact);

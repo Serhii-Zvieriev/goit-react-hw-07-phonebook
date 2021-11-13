@@ -12,23 +12,27 @@ function ContactList() {
 
   const contacts = useSelector(getFilteredContacts);
 
+  const isLoading = useSelector((state) => state.contacts.loading);
   return (
-    <ul className={style.list}>
-      {contacts.map(({ id, name, number }) => (
-        <li key={id}>
-          <p>
-            {name}: {number}
-          </p>
-          <button
-            id={id}
-            onClick={deleteContactFromId}
-            className={style.button}
-          >
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
+    <>
+      {isLoading && <h1>Loading...</h1>}
+      <ul className={style.list}>
+        {contacts.map(({ id, name, number }) => (
+          <li key={id}>
+            <p>
+              {name}: {number}
+            </p>
+            <button
+              id={id}
+              onClick={deleteContactFromId}
+              className={style.button}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
